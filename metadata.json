@@ -1,0 +1,5 @@
+{
+  "name": "Copy of GenAI Banking Agent",
+  "description": "A simulation of an Agentic AI Banking System using Google Gemini. Features a central dispatcher and specialized agents (AMA, TPA, CSA, FRA) for routing and processing banking requests with strict compliance protocols.",
+  "requestFramePermissions": []
+}
