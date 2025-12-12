@@ -100,12 +100,16 @@ const App: React.FC = () => {
         )
       );
 
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      const errorMessage = error.message?.includes('API_KEY') 
+        ? `**Configuration Error**: ${error.message}`
+        : '**System Error**: Unable to reach banking core. Please try again later.';
+
       setMessages((prev) =>
         prev.map((msg) =>
           msg.id === botMessageId
-            ? { ...msg, content: '**System Error**: Unable to reach banking core. Please try again.', isStreaming: false, detectedAgent: AgentType.SYSTEM }
+            ? { ...msg, content: errorMessage, isStreaming: false, detectedAgent: AgentType.SYSTEM }
             : msg
         )
       );

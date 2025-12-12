@@ -6,6 +6,12 @@
     <title>GenAI Banking Agent</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      // CRITICAL POLYFILL FOR NETLIFY/BROWSER
+      // Ensures 'process.env' always exists to prevent "process is not defined" crashes.
+      window.process = window.process || {};
+      window.process.env = window.process.env || {};
+    </script>
+    <script>
       tailwind.config = {
         theme: {
           extend: {
